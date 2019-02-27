@@ -1,19 +1,17 @@
----
-title: Scottish Household Survey Shiny App
----
+# Scottish Household Survey Shiny App
 
-##Overview
+## Overview
 
 The purpose of this app is to allow users to create visualisations of the results of the Scottish Household Survey (SHS) results. The full datasets of results are available from the Scottish Open Data Platform at statistics.gov.scot.
 
-##To run the project locally:
+## To run the project locally:
 
 * Download the SHS folder from the remote repository
 * Using R Studio, set the working directory to the SHS folder
 * Open the file app.R file in the top level of the folder and select ‘run app’
 * Install any dependencies as required
 
-##Project Structure
+## Project Structure
 
 The top level folder contains five files:
 
@@ -35,6 +33,6 @@ The overall structure of the app can be seen by following the source links from 
 * server (followed by name) – outputs and events called in the server
 * data_proc (followed by name) – data preparation and processing, called in the server
 
-##Further Information
+## Further Information
 
 For any more information about this app, please contact SHS@gov.scot 
