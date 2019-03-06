@@ -524,45 +524,39 @@ output$mapArimp <- renderLeaflet({
 output$byYearTitleNeighbourhood <- renderUI({HTML(input$NeighbourhoodRatingBC)})
 output$byYearSubtitleNeighbourhood <- renderUI({paste("
   Colour range shows statistically significant difference from the Scottish average ("
-,SHS_BC_Scotland_Neighbourhood()[which(SHS_BC_Scotland_Neighbourhood()$FilteredNeighbourhood.Measurement==
-                               "Percent"), "FilteredNeighbourhood.Value"], "%)", collapse = " ")})
+,SHS_BC_Scotland_Neighbourhood()$percent, "%)", collapse = " ")})
 
 
 output$byYearTitleMapNeighbourhood <- renderUI({HTML(input$NeighbourhoodRatingBC)})
 output$byYearSubtitleMapNeighbourhood <- renderUI({paste("
   Colour range shows statistically significant difference from the Scottish average ("
-,SHS_BC_Scotland_Neighbourhood()[which(SHS_BC_Scotland_Neighbourhood()$FilteredNeighbourhood.Measurement==
-                               "Percent"), "FilteredNeighbourhood.Value"], "%)", collapse = " ")})
+,SHS_BC_Scotland_Neighbourhood()$percent, "%)", collapse = " ")})
 
 # Community Belonging:
 
 output$byYearTitleCommbel <- renderUI({HTML(input$BelongingBC)})
 output$byYearSubtitleCommbel <- renderUI({paste("
   Colour range shows statistically significant difference from the Scottish average ("
-,SHS_BC_Scotland_Commbel()[which(SHS_BC_Scotland_Commbel()$FilteredCommbel.Measurement==
-                                "Percent"), "FilteredCommbel.Value"], "%)", collapse = " ")})
+,SHS_BC_Scotland_Commbel()$percent, "%)", collapse = " ")})
 
 
 output$byYearTitleMapCommbel <- renderUI({HTML(input$BelongingBC)})
 output$byYearSubtitleMapCommbel <- renderUI({paste("
  Colour range shows statistically significant difference from the Scottish average ("
-,SHS_BC_Scotland_Commbel()[which(SHS_BC_Scotland_Commbel()$FilteredCommbel.Measurement==
-                                  "Percent"), "FilteredCommbel.Value"], "%)", collapse = " ")})
+,SHS_BC_Scotland_Commbel()$percent, "%)", collapse = " ")})
 
 # Area Improvement:
 
 output$byYearTitleArimp <- renderUI({HTML(input$ImprovementBC)})
 output$byYearSubtitleArimp <- renderUI({paste("
 Colour range shows statistically significant difference from the Scottish average ("
-,SHS_BC_Scotland_Arimp()[which(SHS_BC_Scotland_Arimp()$FilteredArimp.Measurement==
-                                 "Percent"), "FilteredArimp.Value"], "%)", collapse = " ")})
+,SHS_BC_Scotland_Arimp()$percent, "%)", collapse = " ")})
 
 
 output$byYearTitleMapArimp <- renderUI({HTML(input$ImprovementBC)})
 output$byYearSubtitleMapArimp <- renderUI({paste("
 Colour range shows statistically significant difference from the Scottish average ("
-   ,SHS_BC_Scotland_Arimp()[which(SHS_BC_Scotland_Arimp()$FilteredArimp.Measurement==
-                                    "Percent"), "FilteredArimp.Value"], "%)", collapse = " ")})
+   ,SHS_BC_Scotland_Arimp()$percent, "%)", collapse = " ")})
 
 
 #----------------------------------------- HELP SECTION --------------------------------------------------
