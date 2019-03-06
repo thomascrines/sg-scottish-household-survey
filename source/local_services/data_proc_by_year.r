@@ -45,8 +45,8 @@ SHS_BC <- reactive ({
                          , "Filtered.urbanrural" = "UrbanRuralClassification"
                          , "Filtered.servicesperformance" = "Statement"
                          , "Filtered.area" = "Area"
-                         , "Filtered.X95upperCI" = "LowerConfidenceLimit"
-                         , "Filtered.X95lowerCI" = "UpperConfidenceLimit"))
+                         , "Filtered.X95upperCI" = "UpperConfidenceLimit"
+                         , "Filtered.X95lowerCI" = "LowerConfidenceLimit"))
   
   SHS_BC <- cbind(StatisticallySignificant = "None", SHS_BC)
   
