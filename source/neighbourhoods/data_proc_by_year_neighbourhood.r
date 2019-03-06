@@ -2,7 +2,8 @@
 
 SHS_BC_Scotland_Neighbourhood <- reactive ({
   
-   UnfilteredNeighbourhood %>% filter(neighbourhoodRating == input$"NeighbourhoodRatingBC"
+  Filtered_Scotland_Neighbourhood <- UnfilteredNeighbourhood %>% filter(
+                                      neighbourhoodRating == input$"NeighbourhoodRatingBC"
                                       & year == input$"DateCodeBCNeighbourhood"
                                       & area == "Scotland"
                                       & gender == "All"
@@ -12,6 +13,12 @@ SHS_BC_Scotland_Neighbourhood <- reactive ({
                                       & ethnicity == "All"
                                       & householdType == "All"
                                       & walkingDistanceToNearestGreenspace == "All")
+  
+  Filtered_Scotland_Neighbourhood$percent <- round(Filtered_Scotland_Neighbourhood$percent, digits = 0)
+  Filtered_Scotland_Neighbourhood$X95upperCI <- round(Filtered_Scotland_Neighbourhood$X95upperCI, digits = 1)
+  Filtered_Scotland_Neighbourhood$X95lowerCI <- round(Filtered_Scotland_Neighbourhood$X95lowerCI, digits = 1)
+  
+  Filtered_Scotland_Neighbourhood
   })
 
 SHS_BC_Neighbourhood <- reactive ({
@@ -95,7 +102,7 @@ SHS_BC_Neighbourhood_Download <- rename(df, c("FilteredNeighbourhoodDownload.yea
 
 SHS_BC_Scotland_Commbel <- reactive ({
 
-  FilteredCommbel <- UnfilteredCommbel %>% filter(communityBelonging == input$"BelongingBC"
+  Filtered_Scotland_Commbel <- UnfilteredCommbel %>% filter(communityBelonging == input$"BelongingBC"
                                             & year == input$"DateCodeBCCommbel"
                                             & area == "Scotland"
                                             & gender == "All"
@@ -105,6 +112,13 @@ SHS_BC_Scotland_Commbel <- reactive ({
                                             & householdType == "All"
                                             & ethnicity == "All"
                                             & walkingDistanceToNearestGreenspace == "All")
+  
+  Filtered_Scotland_Commbel$percent <- round(Filtered_Scotland_Commbel$percent, digits = 0)
+  Filtered_Scotland_Commbel$X95upperCI <- round(Filtered_Scotland_Commbel$X95upperCI, digits = 1)
+  Filtered_Scotland_Commbel$X95lowerCI <- round(Filtered_Scotland_Commbel$X95lowerCI, digits = 1)
+  
+  Filtered_Scotland_Commbel
+  
 })
 
 SHS_BC_Commbel <- reactive ({
@@ -187,7 +201,7 @@ SHS_BC_Commbel_Download <- reactive({
 
 SHS_BC_Scotland_Arimp <- reactive ({
 
-  FilteredArimp <- UnfilteredArimp %>% filter(localNeighbourhoodImprovement == input$"ImprovementBC"
+  Filtered_Scotland_Arimp <- UnfilteredArimp %>% filter(localNeighbourhoodImprovement == input$"ImprovementBC"
                                                   & year == input$"DateCodeBCArimp"
                                                   & area == "Scotland"
                                                   & gender == "All"
@@ -197,6 +211,12 @@ SHS_BC_Scotland_Arimp <- reactive ({
                                                   & householdType == "All"
                                                   & ethnicity == "All"
                                                   & walkingDistanceToNearestGreenspace == "All")
+  
+  Filtered_Scotland_Arimp$percent <- round(Filtered_Scotland_Arimp$percent, digits = 0)
+  Filtered_Scotland_Arimp$X95upperCI <- round(Filtered_Scotland_Arimp$X95upperCI, digits = 1)
+  Filtered_Scotland_Arimp$X95lowerCI <- round(Filtered_Scotland_Arimp$X95lowerCI, digits = 1)
+  
+  Filtered_Scotland_Arimp
 })
 
 SHS_BC_Arimp <- reactive ({

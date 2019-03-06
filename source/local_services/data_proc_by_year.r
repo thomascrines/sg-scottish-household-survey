@@ -1,12 +1,18 @@
 SHS_BC_Scotland <- reactive ({
   
-  Unfiltered %>% filter(age == "All"
-                        & servicesperformance == input$"LocalAuthorityServicesAndPerformanceBC"
-                        & gender == "All"
-                        & area == "Scotland"
-                        & urbanrural == "All" 
-                        & simd == "All"
-                        & year == input$"DateCodeBC")
+  Filtered_Scotland <- Unfiltered %>% filter(age == "All"
+                                    & servicesperformance == input$"LocalAuthorityServicesAndPerformanceBC"
+                                    & gender == "All"
+                                    & area == "Scotland"
+                                    & urbanrural == "All" 
+                                    & simd == "All"
+                                    & year == input$"DateCodeBC")
+  
+  Filtered_Scotland$percent <- round(Filtered_Scotland$percent, digits = 0)
+  Filtered_Scotland$X95upperCI <- round(Filtered_Scotland$X95upperCI, digits = 1)
+  Filtered_Scotland$X95lowerCI <- round(Filtered_Scotland$X95lowerCI, digits = 1)
+  
+  Filtered_Scotland
 })
 
 SHS_BC <- reactive ({
